@@ -10,11 +10,23 @@ using System.Windows.Forms;
 
 namespace COMP123_S2019_LESSON9C
 {
-    public partial class CalculateForm : Form
+    public partial class CalculatorForm : Form
     {
-        public CalculateForm()
+        public CalculatorForm()
         {
             InitializeComponent();
+        }
+
+        private void CalculateForm_Click(object sender, EventArgs e)
+        {
+            var TheButton = sender as Button;
+            int ButtonValue;
+            bool Result = int.TryParse(TheButton.Text, out ButtonValue);
+            if(Result)
+            {
+                ResultLabel.Text = TheButton.Text;
+            }
+            ResultLabel.Text = TheButton.Text;
         }
     }
 }
